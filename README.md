@@ -41,14 +41,8 @@ Requirements:
 * For cuDSS support an NVIDIA GPU of Pascal generation and newer is required
 * Only linux is currently supported
 
-Procedure:
-
-git clone this repo, cd into it, then a simple pip (or uv) install will fully build and install it in your virtual environment of choice.
-
 ```bash
-conda create -n spineax pip
-conda activate spineax
-pip install .
+pip install git+ssh://git@github.com/johnviljoen/spineax.git
 ```
 
 

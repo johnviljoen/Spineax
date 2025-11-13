@@ -164,9 +164,12 @@ foreach(TARGET
     )
     
     # Add RPATH so the .so can find its dependencies
+    # Use $ORIGIN to make paths relative to the installed module location
+    # Modules install to site-packages/spineax/, CUDA libs are in site-packages/nvidia/*/lib/
     set_target_properties(${TARGET} PROPERTIES
         BUILD_RPATH "${ENV_NVIDIA_PATH}/nvidia/cu12/lib:${ENV_NVIDIA_PATH}/nvidia/cublas/lib:${ENV_NVIDIA_PATH}/nvidia/cuda_runtime/lib"
-        INSTALL_RPATH "${ENV_NVIDIA_PATH}/nvidia/cu12/lib:${ENV_NVIDIA_PATH}/nvidia/cublas/lib:${ENV_NVIDIA_PATH}/nvidia/cuda_runtime/lib"
+        INSTALL_RPATH "$ORIGIN/../nvidia/cu12/lib:$ORIGIN/../nvidia/cublas/lib:$ORIGIN/../nvidia/cuda_runtime/lib"
+        INSTALL_RPATH_USE_LINK_PATH FALSE
     )
 endforeach()
 

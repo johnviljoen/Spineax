@@ -6,6 +6,10 @@ feature a single GPU-based linear solver (with plans to implement more, includin
 
 For those that need sparsity pattern detection for jax jacobians/hessians I also offer this [(in progress) package](https://github.com/johnviljoen/jax2sympy).
 
+> NOTE: This is part of an ongoing project to create a batch solved IPOPT clone in JAX that we will publish in the coming days/weeks (I am open sourcing this package ahead of time due to significant interest in this solver being integrated into JAX, to allow others to get started on their own research projects with it!).
+
+> Do not hesitate to reach out if you need modifications to this for your own research work :).
+
 ## cuDSS
 
 I expose ***most*** features of cuDSS (as of 0.7.0) to JAX with ***zero-copy arrays*** and ***full FFI jit/vmap integration*** with ***XLA state management*** including custom batching functionality to expose more information than cuDSS currently supports.
@@ -48,7 +52,9 @@ conda activate spineax
 pip install git+ssh://git@github.com/johnviljoen/spineax.git
 ```
 
+# Citation
 
+TODO
 
 
 
